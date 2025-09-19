@@ -2,3 +2,9 @@ body
     {
         margin-top: 80px;
     }
+
+.form-group > label
+    {
+        margin-top: 10px;
+        font-weight: bold;
+    }

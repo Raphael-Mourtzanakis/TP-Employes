@@ -12,4 +12,7 @@ class EmployeController extends Controller {
         $employes = $service->getListEmployes();
         return view('listEmployes', compact('employes'));
     }
+    public function addEmploye() {
+        return view('formEmploye');
+    }
 }
