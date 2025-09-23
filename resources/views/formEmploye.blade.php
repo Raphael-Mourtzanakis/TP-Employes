@@ -9,8 +9,8 @@
             <div class="form-group">
                 <label class="col-md-3">Civilité :</label>
                 <div class="col-md-6">
-                    <p><input type="radio" name="civi" value="Mme">Madame</p>
-                    <p><input type="radio" name="civi" value="M">Monsieur</p>
+                    <p><input type="radio" name="civil" value="Mme" required> Madame<br>
+                    <input type="radio" name="civil" value="M" required> Monsieur</p>
                 </div>
             </div>
             <div class="form-group">
@@ -42,8 +42,14 @@
             <div class="form-group">
                 <label class="col-md-6">Quel type de présentation recherchez-vous ?</label>
                 <div class="col-md-6">
-                    <p><input type="checkbox" name="interet" value="location"/>Location de mobilier</p>
-                    <p><input type="checkbox" name="interet" value="achat"/>Achat de mobilier</p>
+                    <p><input type="checkbox" name="interet" value="location"/> Location de mobilier<br>
+                    <input type="checkbox" name="interet" value="achat"/> Achat de mobilier</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-6">Message</label>
+                <div class="col-md-6">
+                    <p><textarea type="text" name="msg" value="" placeholder="Écrivez votre message ici" rows="4" cols="40" maxlength="100" required/></textarea></p>
                 </div>
             </div>
             <div class="form-group">
