@@ -49,7 +49,7 @@
             <div class="form-group">
                 <label class="col-md-6">Message</label>
                 <div class="col-md-6">
-                    <p><textarea type="text" name="msg" value="" placeholder="Écrivez votre message ici" rows="4" cols="40" maxlength="100" required/></textarea></p>
+                    <p><textarea name="msg" placeholder="Écrivez votre message ici" rows="4" cols="40" maxlength="100"></textarea></p>
                 </div>
             </div>
             <div class="form-group">
