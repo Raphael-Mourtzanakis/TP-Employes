@@ -29,7 +29,7 @@
             <div class="form-group">
                 <label class="col-md-3">Mot de passe : </label>
                 <div class="col-md-6">
-                    <input type="password" name="mdp" value="" class="form-control" required>
+                    <input type="password" name="mdp" value="" class="form-control" @if (!$employe->numEmp) required @endif>
                 </div>
             </div>
             <div class="form-group">
