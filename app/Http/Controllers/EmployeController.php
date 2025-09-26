@@ -13,7 +13,8 @@ class EmployeController extends Controller {
         return view('listEmployes', compact('employes'));
     }
     public function addEmploye() {
-        return view('formEmploye');
+        $employe =  new Employe();
+        return view('formEmploye', compact('employe'));
     }
 
     public function validEmploye(Request $request) {

@@ -17,9 +17,12 @@ class EmployeService
 
     public function getEmploye($id) {
         $employe = Employe::query()
-            ->select()
+            /*
+             ->select()
             ->where("numEmp", "=", $id)
         ->get();
+            */
+            ->find($id);
 
         return $employe;
     }

@@ -4,52 +4,56 @@
     <form method="POST" action="{{ url('/validerEmploye') }}">
         {{ csrf_field() }}
 
-        <h1>Ajout d'un employé</h1>
+        <h1>@if ($employe->numEmp) Fiche @else Ajout @endif d'un employé</h1>
         <div class="col-md-12 card card-body bg-light">
             <div class="form-group">
                 <label class="col-md-3">Civilité :</label>
                 <div class="col-md-6">
-                    <p><input type="radio" name="civil" value="Mme" required> Madame<br>
-                    <input type="radio" name="civil" value="M" required> Monsieur</p>
+                    <p>
+                        <input type="radio" name="civil" value="Mme" required @if ($employe->civilite == "Mme") checked @endif> Madame<br>
+                        <input type="radio" name="civil" value="M" required @if ($employe->civilite == "M") checked @endif> Monsieur
+                    </p>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-3">Nom: </label>
                 <div class="col-md-6">
-                    <input type="text" name="nom" value="" class="form-control" required></div>
+                    <input type="text" name="nom" value="{{$employe->nom}}" class="form-control" required></div>
             </div>
             <div class="form-group">
                 <label class="col-md-3">Prénom : </label>
                 <div class="col-md-6">
-                    <input type="text" name="prenom" value="" class="form-control" required></div>
+                    <input type="text" name="prenom" value="{{$employe->prenom}}" class="form-control" required></div>
             </div>
             <div class="form-group">
                 <label class="col-md-3">Mot de passe : </label>
                 <div class="col-md-6">
-                    <input type="password" name="mdp" value="" class="form-control" required>
+                    <input type="password" name="mdp" value="" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-3">Profil: Vous êtes</label>
                 <div class="col-md-6">
                     <select class="form-select" name="profil">
-                        <option value="parti">Un particulier</option>
-                        <option value="profe" selected>Un professionnel</option>
-                        <option value="insti">Un institutionnel</option>
+                        <option value="parti" @if ($employe->profil == "parti") selected @endif >Un particulier</option>
+                        <option value="profe" @if ($employe->profil != "parti" && $employe->profil != "insti") selected @endif>Un professionnel</option>
+                        <option value="insti" @if ($employe->profil == "insti") selected @endif>Un institutionnel</option>
                     </select>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-6">Quel type de présentation recherchez-vous ?</label>
                 <div class="col-md-6">
-                    <p><input type="checkbox" name="interet" value="location"/> Location de mobilier<br>
-                    <input type="checkbox" name="interet" value="achat"/> Achat de mobilier</p>
+                    <p>
+                        <input type="checkbox" name="interet" value="location" @if ($employe->interet == "location") checked @endif/> Location de mobilier<br>
+                        <input type="checkbox" name="interet" value="achat" @if ($employe->interet == "achat") checked @endif/> Achat de mobilier
+                    </p>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-md-6">Message</label>
                 <div class="col-md-6">
-                    <p><textarea name="msg" placeholder="Écrivez votre message ici" rows="4" cols="40" maxlength="100"></textarea></p>
+                    <p><textarea name="msg" placeholder="Écrivez votre message ici" rows="4" cols="40" maxlength="100">{{$employe->message}}</textarea></p>
                 </div>
             </div>
             <div class="form-group">
