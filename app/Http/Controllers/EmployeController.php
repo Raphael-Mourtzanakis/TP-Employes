@@ -18,7 +18,13 @@ class EmployeController extends Controller {
     }
 
     public function validEmploye(Request $request) {
-        $employe = new Employe();
+        $id = $request->input('id');
+        $service = new EmployeService();
+        if ($id) {
+            $employe = $service->getEmploye($id);
+        } else {
+            $employe = new Employe();
+        }
         $employe->civilite = $request->input("civil");
         $employe->prenom = $request->input("prenom");
         $employe->nom = $request->input("nom");
@@ -27,7 +33,6 @@ class EmployeController extends Controller {
         $employe->interet = $request->input("interet");
         $employe->message = $request->input("msg");
 
-        $service = new EmployeService();
         $service->saveEmploye($employe);
 
         return view('home');
