@@ -14,6 +14,7 @@
             <th>Intérêt</th>
             <th>Profil</th>
             <th>Message</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -25,6 +26,7 @@
                 <td>{{ $emp->interet }}</td>
                 <td>{{ $emp->profil }}</td>
                 <td>{{ $emp->message }}</td>
+                <td><a href="{{url("/editerEmploye/".$emp->numEmp)}}">Afficher</a></td>
             </tr>
         @endforeach
         </tbody>

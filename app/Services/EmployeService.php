@@ -15,6 +15,15 @@ class EmployeService
         return $liste;
     }
 
+    public function getEmploye($id) {
+        $employe = Employe::query()
+            ->select()
+            ->where("numEmp", "=", $id)
+        ->get();
+
+        return $employe;
+    }
+
     public function saveEmploye(Employe $employe) {
         $employe->save();
     }
