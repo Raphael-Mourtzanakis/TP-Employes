@@ -57,6 +57,7 @@
                     <p><textarea name="msg" placeholder="Écrivez votre message ici" rows="4" cols="40" maxlength="100">{{$employe->message}}</textarea></p>
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="col-md-12 col-md-offset-3">
                     <button type="submit" class="btn btn-primary">

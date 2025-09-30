@@ -18,12 +18,26 @@ navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <span class="nav-title">Employés</span>
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/listerEmployes') }}">Lister</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/ajouterEmploye') }}">Ajouter</a>
+                    </li>
+                </ul>
+
+                <span class="nav-sepration"></span>
+
+                <span class="nav-title">Équipes</span>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/listerEquipes') }}">Lister</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/ajouterEquipe') }}">Ajouter</a>
                     </li>
                 </ul>
             </div>
