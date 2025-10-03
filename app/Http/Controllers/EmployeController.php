@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Employe;
 use Illuminate\Http\Request;
 use App\Services\EmployeService;
+use Exception;
 
 class EmployeController extends Controller {
     public function listEmployes() {
-        $service = new EmployeService();
-        $employes = $service->getListEmployes();
-        return view('listEmployes', compact('employes'));
+        try {
+            $service = new EmployeService();
+            $employes = $service->getListEmployes();
+            return view('listEmployes', compact('employes'));
+        } catch (Exception $exception) {
+            return view('error', compact('exception'));
+        }
     }
     public function addEmploye() {
         $employe =  new Employe();
